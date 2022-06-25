@@ -30,9 +30,6 @@ gem "require_all"
 
 # These gems will only be used when we are running the application locally
 group :development do
-  # Used to generate seed data
-  # https://github.com/faker-ruby/faker
-  gem "faker", "~> 2.18"
 
   # Auto-reload the server when files are changed
   # https://github.com/alexch/rerun
