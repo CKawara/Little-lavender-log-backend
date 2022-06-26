@@ -17,6 +17,11 @@ class ApplicationController < Sinatra::Base
         entries = Entry.all
         entries.to_json
     end
+    get '/entries/:id' do
+        entry = Entry.find(params[:id])
+    
+        entry.to_json
+    end
     post '/entries' do 
         entry = Entry.create(
           title: params[:title],
