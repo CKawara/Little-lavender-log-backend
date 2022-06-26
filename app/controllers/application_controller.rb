@@ -8,8 +8,7 @@ class ApplicationController < Sinatra::Base
 
     post '/categories' do 
         category = Category.create(
-          body: params[:body],
-          username: params[:username]
+          name: params[:name]
         )
         category.to_json
     end
