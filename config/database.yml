@@ -8,12 +8,10 @@ default: &default
 
 development:
   <<: *default
-  url: "postgresql://postgres:postgres@localhost:5432/database_name"
-
+  url: "postgresql://postgres:postgres@localhost:5432/little_lavender_log"
 test:
   <<: *default
-  url: "postgresql://postgres:postgres@localhost:5432/test_database_name"
-
+  url: "postgresql://postgres:postgres@localhost:5432/test/little_lavender_log"
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
