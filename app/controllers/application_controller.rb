@@ -12,5 +12,32 @@ class ApplicationController < Sinatra::Base
         )
         category.to_json
     end
+
+    get '/entries' do
+        entries = Entry.all
+        entries.to_json
+    end
+    post '/entries' do 
+        entry = Entry.create(
+          title: params[:title],
+          body: params[:body],
+          user_id: params[:user_id],
+          category_id: params[:category_id]
+        )
+        entry.to_json
+    end
+    patch '/entries/:id' do 
+        entry = Entry.find(params[:id])
+        entry.update(
+          title: params[:title],
+          body: params[:body]
+        )
+        entry.to_json
+    end
+    delete '/entries/:id' do 
+        entry = Entry.find(params[:id])
+        entry.destroy
+        entry.to_json
+    end
 end
   
