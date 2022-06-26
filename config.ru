@@ -13,4 +13,4 @@ require_relative './config/environment'
   
 # end
 
-run App
+run ApplicationController
