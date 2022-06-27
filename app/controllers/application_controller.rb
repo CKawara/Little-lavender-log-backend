@@ -54,7 +54,7 @@ class ApplicationController < Sinatra::Base
     delete '/entries/:id' do 
         entry = Entry.find(params[:id])
         entry.destroy
-        entry.to_json
+        entry.to_json(include: :category.name)
     end
 end
   
