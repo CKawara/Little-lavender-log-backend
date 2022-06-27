@@ -3,7 +3,7 @@ class ApplicationController < Sinatra::Base
 
     get '/categories' do
         categories = Category.all
-        categories.to_json
+        categories.to_json{include: :entries}
     end
 
     post '/categories' do 
@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
     end
     get '/users/:id' do
         user = User.find(params[:id])
-        user.to_json
+        user.to_json(include: :entries)
     end
 
     get '/entries' do
